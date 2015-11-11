@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <title>Find Courses</title>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/effect.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+     <script src="js/controllers.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+    <meta name="viewport" content="width=500, initial-scale=1">
+<body>
+
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+	
+  <div id="map">Loading...</div>
+ 
+  <div id="searchForm" ng-controller="customersCtrl">
+        <form class="ui-filterable">
+           <input id="myFilter" data-type="search" ng-keydown ="showList()" ng-model="user.keyWord">
+        </form>
+        <ul id='keywordList' data-role="listview" data-filter="true" data-input="#myFilter" data-inset="true" style="display:none">
+           <li><a ng-click ="selectKeyword('Finance')">Finance</a></li>
+           <li><a ng-click ="selectKeyword('Electrical')">Electrical</a></li>
+           <li><a ng-click ="selectKeyword('Construction')">Contruction</a></li>
+        </ul>
+
+    <form novalidate>
+        <select type="text" ng-model="user.degreeType" placeholder="degree type">
+           <option value="" selected disabled>Select degree</option><option>Diploma</option><option>Advanced Diploma</option><option>Certificate III</option>
+        </select>
+        <select type="text" ng-model="user.degName">
+        <option value="" selected disabled>Name</option><option>Finance Diploma</option><option>Construction Induction Card</option><option>Electrical Supply</option>
+        </select>
+        <!-- Gender: <input type="radio" ng-model="user.gender" value="male" />male
+          <input type="radio" ng-model="user.gender" value="female" />female<br />
+          <input type="button" ng-click="reset()" value="Reset" /> 
+           <pre>user = {{user | json}}</pre>
+            <pre>master = {{master | json}}</pre>-->
+      <input type="submit" ng-click="update(user)" value="Select and Search" />
+    </form>
+   <ul ng-repeat="x in names">
+        <a href="{{x.webLink}}"><h3> {{ x.name  }} </h3></a>
+      <h4> {{ x.place }} </h4>
+      <p> <img ng-src="{{x.image}}"> </p> 
+   </ul>
+ </div>
+
+
+
+  		<!--<p> {{ x.length + ', ' + x.description }} 
+            <p> {{ x.comment }} </p> </p> -->
+
+
+</div>
+
+
+
+</body>
+</html>

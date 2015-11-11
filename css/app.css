@@ -1,0 +1,53 @@
+/* app css stylesheet */
+
+body {
+  padding-top: 20px;
+  background-color: #F5F5F0;
+  font-family: "Arial", "serif";
+}
+
+#map {
+   width: 45%;
+   height: 500px;
+   border-radius: 30px;
+   display: inline-block;
+   float: left;
+  margin: 10px;
+}
+#searchForm {
+  width: 40%;
+  display: inline-block;
+  margin-left: 50px;
+  float: left;
+}
+select{
+
+}
+
+ul {
+    height:50%;
+    width:40%;
+    display: inline-block;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 15px;
+    background-color: #E6E6FA;
+    border-radius: 300px;
+        clear: both;
+}
+h3{
+  margin-left: 12%;
+  text-align: center;
+  width: 75%;
+}
+
+h4{
+    text-align: center;
+}
+img{
+    margin-left: 25%;
+    width: 50%;
+    height: 50%;
+}
